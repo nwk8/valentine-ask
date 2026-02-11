@@ -64,13 +64,9 @@ yesBtn.addEventListener("click", () => {
 
     catImg.src = "catyes.gif";
 
-    document.querySelector(".letter-window").classList.add("final");
-
-    buttons.style.display = "none";
-
-    finalText.style.display = "block";
-
     // === PLAY SOUND ===
     const yipeeSound = document.getElementById("yipee-sound");
-    yipeeSound.play();
+    yesBtn.addEventListener("click", () => {
+        yipeeSound.play();
+    });
 });
