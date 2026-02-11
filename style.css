@@ -39,6 +39,11 @@ body {
     cursor: pointer;
 }
 
+#letter-title{
+    filter: drop-shadow(0 0 10px rgb(172, 6, 89));
+    background: white;
+}
+
 #letter-container{
     display: none;
     position:fixed;
@@ -57,7 +62,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url("window.png");
+    background-image: url("image.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
