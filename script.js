@@ -57,8 +57,8 @@ noBtn.addEventListener("mouseover", () => {
 //     }
 // });
 
-// YES is clicked
 
+// YES is clicked
 yesBtn.addEventListener("click", () => {
     title.textContent = "Yippeeee!";
 
@@ -69,4 +69,8 @@ yesBtn.addEventListener("click", () => {
     buttons.style.display = "none";
 
     finalText.style.display = "block";
+
+    // === PLAY SOUND ===
+    const yipeeSound = document.getElementById("yipee-sound");
+    yipeeSound.play();
 });
