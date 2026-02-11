@@ -58,15 +58,18 @@ noBtn.addEventListener("mouseover", () => {
 // });
 
 
-// YES is clicked
-yesBtn.addEventListener("click", () => {
-    title.textContent = "Yippeeee!";
-
-    catImg.src = "catyes.gif";
-
-    // === PLAY SOUND ===
+document.addEventListener("DOMContentLoaded", () => {
+    const yesBtn = document.querySelector(".btn[alt='Yes']");
     const yipeeSound = document.getElementById("yipee-sound");
+
     yesBtn.addEventListener("click", () => {
-        yipeeSound.play();
+        title.textContent = "Yippeeee!";
+        catImg.src = "catyes.gif";
+        document.querySelector(".letter-window").classList.add("final");
+        buttons.style.display = "none";
+        finalText.style.display = "block";
+
+        // play sound
+        yipeeSound.play().catch(e => console.log(e));
     });
 });
