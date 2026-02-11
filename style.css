@@ -1,3 +1,9 @@
+.dm-mono-medium {
+    font-family: "DM Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+  }
+
 body {
     margin: 0;
     height: 100vh;
@@ -5,7 +11,8 @@ body {
     justify-content: center;
     align-items: center;
     background-image: url("heart-bg.jpg");
-    font-family: "Pixelify Sans", sans-serif;
+     font-family: "DM Mono", monospace;
+  font-weight: 500;
 }
 
 /* Envelope Screen */
@@ -120,6 +127,11 @@ display: inline-block;
     transform-origin: center center;
     transition: transform 0.3s ease;
 }
+
+.yes-btn:hover {
+    filter: drop-shadow(0 0 10px limegreen);
+    cursor: pointer;
+  }
 
 .no-btn {
     z-index: 1;
