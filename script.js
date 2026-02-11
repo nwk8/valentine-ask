@@ -56,11 +56,13 @@ noBtn.addEventListener("mouseover", () => {
 //         yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
 //     }
 // });
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const yesBtn = document.querySelector(".btn[alt='Yes']");
     const yipeeSound = document.getElementById("yipee-sound");
+    const title = document.getElementById("letter-title");
+    const catImg = document.getElementById("letter-cat");
+    const buttons = document.getElementById("letter-buttons");
+    const finalText = document.getElementById("final-text");
 
     yesBtn.addEventListener("click", () => {
         title.textContent = "Yippeeee!";
@@ -70,6 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
         finalText.style.display = "block";
 
         // play sound
-        yipeeSound.play().catch(e => console.log(e));
+        const playPromise = yipeeSound.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                console.log("Audio play failed:", error);
+            });
+        }
     });
 });
