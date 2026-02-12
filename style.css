@@ -44,6 +44,10 @@ body {
     background: white;
 }
 
+.no-border {
+    border: none;
+  }
+
 #letter-container{
     display: none;
     position:fixed;

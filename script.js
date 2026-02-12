@@ -70,6 +70,10 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".letter-window").classList.add("final");
         buttons.style.display = "none";
         finalText.style.display = "block";
+        title.classList.add("no-border"); 
+    
+        yipeeSound.play().catch(e => console.log(e));
+    });
 
         // play sound
         const playPromise = yipeeSound.play();
@@ -79,4 +83,3 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     });
-});
