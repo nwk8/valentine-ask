@@ -38,13 +38,29 @@ document.addEventListener("DOMContentLoaded", () => {
         noBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
     });
 
-    // YES button click
     yesBtn.addEventListener("click", () => {
-        title.textContent = "Yippeeee!";
+        // Change title
+        title.textContent = "Yippeeee! 🎉";
+        title.classList.add("no-border"); // optional border removal
+
+        // Change GIF
         catImg.src = "catyes.gif";
-        document.querySelector(".letter-window").classList.add("final");
+    
+        // Hide buttons
         buttons.style.display = "none";
-        finalText.style.display = "block";
+    
+        // Show final text (only if it exists)
+        if (finalText) {
+            finalText.style.display = "block";
+        }
+    
+        // Play sound
+        yipeeSound.currentTime = 0;
+        yipeeSound.play().catch(error => {
+            console.log("Audio play failed:", error);
+        });
+    
+    });
 
         // Play sound ONLY here
         yipeeSound.currentTime = 0;
@@ -52,5 +68,3 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("Audio play failed:", error);
         });
     });
-
-});
