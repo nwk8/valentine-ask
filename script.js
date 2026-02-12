@@ -1,3 +1,5 @@
+let audioUnlocked = false;
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const envelope = document.getElementById("envelope-container");
