@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Elements
     const envelope = document.getElementById("envelope-container");
     const letter = document.getElementById("letter-container");
     const noBtn = document.querySelector(".no-btn");
@@ -12,11 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const finalText = document.getElementById("final-text");
     const yipeeSound = document.getElementById("yipee-sound");
 
-    // Ensure sound never plays on load
+    // Safety: force audio silent on load
     yipeeSound.pause();
     yipeeSound.currentTime = 0;
 
-    // Click Envelope
     envelope.addEventListener("click", () => {
         envelope.style.display = "none";
         letter.style.display = "flex";
@@ -26,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 50);
     });
 
-    // NO button moves
     noBtn.addEventListener("mouseover", () => {
         const distance = 200;
         const angle = Math.random() * Math.PI * 2;
@@ -39,32 +36,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     yesBtn.addEventListener("click", () => {
-        // Change title
         title.textContent = "Yippeeee! 🎉";
-        title.classList.add("no-border"); // optional border removal
-
-        // Change GIF
         catImg.src = "catyes.gif";
-    
-        // Hide buttons
         buttons.style.display = "none";
-    
-        // Show final text (only if it exists)
+
         if (finalText) {
             finalText.style.display = "block";
         }
-    
-        // Play sound
+
         yipeeSound.currentTime = 0;
-        yipeeSound.play().catch(error => {
-            console.log("Audio play failed:", error);
-        });
-    
+        yipeeSound.play();
     });
 
-        // Play sound ONLY here
-        yipeeSound.currentTime = 0;
-        yipeeSound.play().catch(error => {
-            console.log("Audio play failed:", error);
-        });
-    });
+});
