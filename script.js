@@ -57,24 +57,18 @@ noBtn.addEventListener("mouseover", () => {
 //     }
 // });
 document.addEventListener("DOMContentLoaded", () => {
-    const yesBtn = document.querySelector(".btn[alt='Yes']");
+    const yesBtn = document.querySelector(".yes-btn");
     const yipeeSound = document.getElementById("yipee-sound");
-    const title = document.getElementById("letter-title");
-    const catImg = document.getElementById("letter-cat");
-    const buttons = document.getElementById("letter-buttons");
-    const finalText = document.getElementById("final-text");
 
-    yesBtn.addEventListener("click", () => {
-        title.textContent = "Yippeeee!";
-        catImg.src = "catyes.gif";
-        document.querySelector(".letter-window").classList.add("final");
-        buttons.style.display = "none";
-        finalText.style.display = "block";
-    
-        title.classList.add("no-border"); // 👈 add this line
-    
-        yipeeSound.play().catch(e => console.log(e));
+    // Make sure sound NEVER plays on load
+    yipeeSound.pause();
+    yipeeSound.currentTime = 0;
+
+    yesBtn.addEventListener("click", function () {
+        yipeeSound.currentTime = 0;
+        yipeeSound.play();
     });
+});
         // play sound
         const playPromise = yipeeSound.play();
         if (playPromise !== undefined) {
@@ -82,6 +76,4 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log("Audio play failed:", error);
             });
         }
-    });
 
-    
